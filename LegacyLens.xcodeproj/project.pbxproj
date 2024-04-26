@@ -11,14 +11,21 @@
 		29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */; };
 		29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */; };
 		29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */; };
+		29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */; };
+		72F9410E1E4759977BF32FA8 /* Pods_LegacyLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D358950DE33D6287553A11F /* Pods_LegacyLens.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A7D6169572CF135E7E880D4 /* Pods-LegacyLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegacyLens.release.xcconfig"; path = "Target Support Files/Pods-LegacyLens/Pods-LegacyLens.release.xcconfig"; sourceTree = "<group>"; };
 		29DB42AA2BDA16BB00ED2F54 /* LegacyLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegacyLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecog.swift; sourceTree = "<group>"; };
+		29DB42DF2BDB484400ED2F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5D358950DE33D6287553A11F /* Pods_LegacyLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegacyLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B3940441D45769E025D7596 /* Pods-LegacyLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegacyLens.debug.xcconfig"; path = "Target Support Files/Pods-LegacyLens/Pods-LegacyLens.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F9410E1E4759977BF32FA8 /* Pods_LegacyLens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F0DFBA321AA903CBA92ACA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D358950DE33D6287553A11F /* Pods_LegacyLens.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		29DB42A12BDA16BB00ED2F54 = {
 			isa = PBXGroup;
 			children = (
 				29DB42AC2BDA16BB00ED2F54 /* LegacyLens */,
 				29DB42AB2BDA16BB00ED2F54 /* Products */,
+				F47C526A0D3A09EF129C2104 /* Pods */,
+				07F0DFBA321AA903CBA92ACA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +69,10 @@
 		29DB42AC2BDA16BB00ED2F54 /* LegacyLens */ = {
 			isa = PBXGroup;
 			children = (
+				29DB42DF2BDB484400ED2F54 /* Info.plist */,
 				29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */,
 				29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */,
+				29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */,
 				29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */,
 				29DB42B32BDA16BC00ED2F54 /* Preview Content */,
 			);
@@ -67,6 +87,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F47C526A0D3A09EF129C2104 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B3940441D45769E025D7596 /* Pods-LegacyLens.debug.xcconfig */,
+				0A7D6169572CF135E7E880D4 /* Pods-LegacyLens.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +103,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29DB42B82BDA16BC00ED2F54 /* Build configuration list for PBXNativeTarget "LegacyLens" */;
 			buildPhases = (
+				A5AD48F0FA6248C4A7BA8429 /* [CP] Check Pods Manifest.lock */,
 				29DB42A62BDA16BB00ED2F54 /* Sources */,
 				29DB42A72BDA16BB00ED2F54 /* Frameworks */,
 				29DB42A82BDA16BB00ED2F54 /* Resources */,
+				024FE990415EC72694A1E9C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +163,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		024FE990415EC72694A1E9C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LegacyLens/Pods-LegacyLens-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LegacyLens/Pods-LegacyLens-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LegacyLens/Pods-LegacyLens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5AD48F0FA6248C4A7BA8429 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LegacyLens-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29DB42A62BDA16BB00ED2F54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +212,7 @@
 			files = (
 				29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */,
 				29DB42AE2BDA16BB00ED2F54 /* AppDelegate.swift in Sources */,
+				29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +340,7 @@
 		};
 		29DB42B92BDA16BC00ED2F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B3940441D45769E025D7596 /* Pods-LegacyLens.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -274,8 +349,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LegacyLens/Preview Content\"";
 				DEVELOPMENT_TEAM = M793N4X6S7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LegacyLens/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow to use microphone";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow to use microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -297,6 +376,7 @@
 		};
 		29DB42BA2BDA16BC00ED2F54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A7D6169572CF135E7E880D4 /* Pods-LegacyLens.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,8 +385,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LegacyLens/Preview Content\"";
 				DEVELOPMENT_TEAM = M793N4X6S7;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LegacyLens/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow to use microphone";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow to use microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;

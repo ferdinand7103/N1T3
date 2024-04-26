@@ -9,8 +9,25 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    @State private var isSpeechRecogActive = false
+    
     var body: some View {
         ARViewContainer().edgesIgnoringSafeArea(.all)
+        Button(action: {
+            isSpeechRecogActive.toggle()
+        }) {
+            ZStack {
+                Circle()
+                    .foregroundColor(.gray)
+                    .opacity(0.4)
+                    .frame(width: 100, height: 100)
+                Image(systemName: "mic")
+                    .font(.system(size: 40))
+            }
+        }
+        if isSpeechRecogActive {
+            SpeechRecogViewController()
+        }
     }
 }
 
