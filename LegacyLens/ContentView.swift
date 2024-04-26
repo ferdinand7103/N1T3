@@ -8,25 +8,51 @@
 import SwiftUI
 import RealityKit
 
-struct ContentView : View {
-    @State private var isSpeechRecogActive = false
-    
+struct ContentView: View {
+    @State private var isListening = false
+    @State private var recognizedText = ""
+    @State private var animatePulse = false
+    private let speechService = SpeechRecognizerService()
+
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
-        Button(action: {
-            isSpeechRecogActive.toggle()
-        }) {
-            ZStack {
-                Circle()
-                    .foregroundColor(.gray)
-                    .opacity(0.4)
-                    .frame(width: 100, height: 100)
-                Image(systemName: "mic")
-                    .font(.system(size: 40))
+        VStack(spacing: 20) {
+            Text(recognizedText)
+                .padding()
+            Button(action: toggleListening) {
+                ZStack {
+                    Circle()
+                        .foregroundColor(.gray)
+                        .opacity(0.4)
+                        .frame(width: 100, height: 100)
+                    Image(systemName: "mic")
+                        .font(.system(size: 40))
+                        .foregroundColor(.white)
+                }
+                .scaleEffect(animatePulse ? 1.1 : 1.0)
+                .animation(animatePulse ? Animation.easeInOut(duration: 0.7).repeatForever(autoreverses: true) : .default, value: animatePulse)
             }
         }
-        if isSpeechRecogActive {
-            SpeechRecogViewController()
+        .onAppear {
+            speechService.requestAuthorization { authorized in
+                if !authorized {
+                    print("Speech recognition authorization denied")
+                }
+            }
+        }
+    }
+
+    private func toggleListening() {
+        isListening.toggle()
+        if isListening {
+            animatePulse = true
+            try? speechService.startListening { text in
+                if let text = text {
+                    self.recognizedText = text
+                }
+            }
+        } else {
+            animatePulse = false
+            speechService.stopListening()
         }
     }
 }
