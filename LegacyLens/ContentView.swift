@@ -7,30 +7,55 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 struct ContentView: View {
     @State private var isListening = false
     @State private var recognizedText = ""
     @State private var animatePulse = false
+    @State private var arView: ARSCNView?
     private let speechService = SpeechRecognizerService()
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text(recognizedText)
-                .padding()
-            Button(action: toggleListening) {
-                ZStack {
-                    Circle()
-                        .foregroundColor(.gray)
-                        .opacity(0.4)
-                        .frame(width: 100, height: 100)
-                    Image(systemName: "mic")
-                        .font(.system(size: 40))
-                        .foregroundColor(.white)
+        ZStack(alignment: .bottom) {
+            ARViewContainer(arView: $arView)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
+            HStack {
+                // Mic button on the left
+                Button(action: toggleListening) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.gray)
+                            .opacity(0.4)
+                            .frame(width: 70, height: 70)
+                        Image(systemName: "mic")
+                            .font(.system(size: 25))
+                            .foregroundColor(.white)
+                    }
                 }
                 .scaleEffect(animatePulse ? 1.1 : 1.0)
                 .animation(animatePulse ? Animation.easeInOut(duration: 0.7).repeatForever(autoreverses: true) : .default, value: animatePulse)
+                .padding(.leading, 30) // Adds padding to position the mic button to the far left
+
+                Spacer() // This will push both buttons to the edges
+
+                // Camera button on the right
+                Button(action: takeSnapshot) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(.gray)
+                            .opacity(0.4)
+                            .frame(width: 70, height: 70)
+                        Image(systemName: "camera")
+                            .font(.system(size: 25))
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding(.trailing, 30) // Adds padding to position the camera button to the far right
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom) // Ensures the HStack uses the full width and stays at the bottom
+            .padding(.bottom, 20) // Adds some padding at the bottom
         }
         .onAppear {
             speechService.requestAuthorization { authorized in
@@ -55,33 +80,13 @@ struct ContentView: View {
             speechService.stopListening()
         }
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
     
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-
-        // Create a cube model
-        let mesh = MeshResource.generateBox(size: 0.1, cornerRadius: 0.005)
-        let material = SimpleMaterial(color: .gray, roughness: 0.15, isMetallic: true)
-        let model = ModelEntity(mesh: mesh, materials: [material])
-        model.transform.translation.y = 0.05
-
-        // Create horizontal plane anchor for the content
-        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.2, 0.2)))
-        anchor.children.append(model)
-
-        // Add the horizontal plane anchor to the scene
-        arView.scene.anchors.append(anchor)
-
-        return arView
-        
+    func takeSnapshot() {
+        if let image = arView?.snapshot() {
+            let compressedImage = UIImage(data: image.pngData()!)
+            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        }
     }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 #Preview {

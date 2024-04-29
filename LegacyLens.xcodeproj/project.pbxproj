@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292DD9922BDF4D0800B9EB81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */; };
+		292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */; };
 		29DB42AE2BDA16BB00ED2F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */; };
 		29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */; };
 		29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		0A7D6169572CF135E7E880D4 /* Pods-LegacyLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegacyLens.release.xcconfig"; path = "Target Support Files/Pods-LegacyLens/Pods-LegacyLens.release.xcconfig"; sourceTree = "<group>"; };
+		292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = SceneMyModel.usdz; path = ../../../../Downloads/SceneMyModel.usdz; sourceTree = "<group>"; };
 		29DB42AA2BDA16BB00ED2F54 /* LegacyLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegacyLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */,
 				29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */,
 				29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */,
+				292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */,
+				292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */,
 				29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */,
 				29DB42B32BDA16BC00ED2F54 /* Preview Content */,
 			);
@@ -157,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */,
+				292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */,
 				29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */,
+				292DD9922BDF4D0800B9EB81 /* ARViewContainer.swift in Sources */,
 				29DB42AE2BDA16BB00ED2F54 /* AppDelegate.swift in Sources */,
 				29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */,
 			);
@@ -353,7 +361,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegacyLens/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow to use microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow to use microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -389,7 +399,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LegacyLens/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow to use microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Allow to use microphone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
