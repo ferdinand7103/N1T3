@@ -1,6 +1,7 @@
 import Speech
+import SwiftUI
 
-class SpeechRecognizerService: NSObject {
+class SpeechRecognizerService: NSObject, ObservableObject {
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -20,28 +21,29 @@ class SpeechRecognizerService: NSObject {
             recognitionRequest?.endAudio()
             return
         }
-
+        
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
         }
-
+        
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-
+        
         let inputNode = audioEngine.inputNode  // Directly use without guard
         let recordingFormat = inputNode.outputFormat(forBus: 0)
-
+        
         recognitionRequest?.shouldReportPartialResults = true
-
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest!) { result, error in
+        
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest!) { [self] result, error in
             var isFinal = false
             if let result = result {
                 isFinal = result.isFinal
-                completion(result.bestTranscription.formattedString)
+                let recognizedText = result.bestTranscription.formattedString
+                completion(recognizedText)
             }
             
             if error != nil || isFinal {
@@ -61,7 +63,11 @@ class SpeechRecognizerService: NSObject {
     }
     
     func stopListening() {
-        audioEngine.stop()
-        recognitionRequest?.endAudio()
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+        }
+        recognitionTask?.cancel()
+        recognitionTask = nil
     }
 }

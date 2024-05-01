@@ -10,8 +10,12 @@
 		292DD9922BDF4D0800B9EB81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */; };
 		292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */; };
 		292DD9B02BDF80A900B9EB81 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */; };
+		292DD9B82BDFAEB400B9EB81 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9B72BDFAEB400B9EB81 /* test.mp4 */; };
+		295EC3672BE0985D0041F6E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EC3662BE0985D0041F6E4 /* ContentView.swift */; };
+		295EC36D2BE0A1EE0041F6E4 /* LovePose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 295EC36C2BE0A1EE0041F6E4 /* LovePose.usdz */; };
+		295EC36F2BE0A2120041F6E4 /* intro.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 295EC36E2BE0A2120041F6E4 /* intro.MP4 */; };
 		29DB42AE2BDA16BB00ED2F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */; };
-		29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */; };
+		29DB42B02BDA16BB00ED2F54 /* ContentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42AF2BDA16BB00ED2F54 /* ContentViews.swift */; };
 		29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */; };
 		29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */; };
 		29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */; };
@@ -23,9 +27,13 @@
 		292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = SceneMyModel.usdz; path = ../../../../Downloads/SceneMyModel.usdz; sourceTree = "<group>"; };
 		292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
+		292DD9B72BDFAEB400B9EB81 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		295EC3662BE0985D0041F6E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		295EC36C2BE0A1EE0041F6E4 /* LovePose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = LovePose.usdz; sourceTree = "<group>"; };
+		295EC36E2BE0A2120041F6E4 /* intro.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.MP4; sourceTree = "<group>"; };
 		29DB42AA2BDA16BB00ED2F54 /* LegacyLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegacyLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29DB42AF2BDA16BB00ED2F54 /* ContentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViews.swift; sourceTree = "<group>"; };
 		29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecog.swift; sourceTree = "<group>"; };
@@ -77,9 +85,13 @@
 			children = (
 				29DB42DF2BDB484400ED2F54 /* Info.plist */,
 				29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */,
-				29DB42AF2BDA16BB00ED2F54 /* ContentView.swift */,
+				29DB42AF2BDA16BB00ED2F54 /* ContentViews.swift */,
+				295EC3662BE0985D0041F6E4 /* ContentView.swift */,
+				295EC36E2BE0A2120041F6E4 /* intro.MP4 */,
+				295EC36C2BE0A1EE0041F6E4 /* LovePose.usdz */,
 				29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */,
 				292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */,
+				292DD9B72BDFAEB400B9EB81 /* test.mp4 */,
 				292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */,
 				292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */,
 				29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */,
@@ -165,10 +177,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295EC36D2BE0A1EE0041F6E4 /* LovePose.usdz in Resources */,
+				295EC36F2BE0A2120041F6E4 /* intro.MP4 in Resources */,
 				29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */,
 				292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */,
 				29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */,
 				292DD9B02BDF80A900B9EB81 /* sampleVideo.mp4 in Resources */,
+				292DD9B82BDFAEB400B9EB81 /* test.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29DB42B02BDA16BB00ED2F54 /* ContentView.swift in Sources */,
+				29DB42B02BDA16BB00ED2F54 /* ContentViews.swift in Sources */,
+				295EC3672BE0985D0041F6E4 /* ContentView.swift in Sources */,
 				292DD9922BDF4D0800B9EB81 /* ARViewContainer.swift in Sources */,
 				29DB42AE2BDA16BB00ED2F54 /* AppDelegate.swift in Sources */,
 				29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */,
