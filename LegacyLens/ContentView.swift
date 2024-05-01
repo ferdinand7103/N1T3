@@ -17,7 +17,7 @@ struct ContentView : View {
     @State private var animatePulse = false
     @State private var isShowingSceneModel = true
     private let speechService = SpeechRecognizerService()
-    
+    @State private var arViewContainer = ARViewContainer(modelName: "SceneMyModel")
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -56,7 +56,7 @@ struct ContentView : View {
                 }
                 Spacer()
                 Button(action: {
-                    toggleListening()
+                    toggleListening(arViewContainer: arViewContainer)
                 }) {
                     ZStack {
                         Circle()
@@ -70,15 +70,15 @@ struct ContentView : View {
                 }
                 .scaleEffect(animatePulse ? 1.1 : 1.0)
                 .animation(animatePulse ? Animation.easeInOut(duration: 0.7).repeatForever(autoreverses: true) : .default, value: animatePulse)
-//                .padding(.leading, 30)
+                //                .padding(.leading, 30)
             }
             .padding()
         }
     }
     
-    private func toggleListening() {
+    func toggleListening(arViewContainer: ARViewContainer) {
         isListening.toggle()
-
+        
         if isListening {
             animatePulse = true
             do {
@@ -87,6 +87,11 @@ struct ContentView : View {
                         if let text = text {
                             self.recognizedText = text
                             print("Recognized Text: \(self.recognizedText)")
+                            if self.recognizedText.lowercased() == "what is your most memorable experience" {
+                                DispatchQueue.main.async {
+                                    arViewContainer.changeVideo()
+                                }
+                            }
                         } else {
                             self.animatePulse = false
                             self.speechService.stopListening()
@@ -103,7 +108,7 @@ struct ContentView : View {
             speechService.stopListening()
         }
     }
-
+    
     
     private func takeSnapshot() {
         ARVariables.arView.snapshot(saveToHDR: false) { image in
@@ -195,6 +200,43 @@ struct ARViewContainer: UIViewRepresentable, Equatable {
             videoAnchor.addChild(modelEntity)
             ARVariables.arView.scene.addAnchor(videoAnchor)
             print("Play")
+        }
+    }
+    
+    func changeVideo() {
+        guard let arView = ARVariables.arView else {
+            print("ARView not initialized")
+            return
+        }
+
+        // Remove existing video anchor if it exists
+        if let existingAnchor = arView.scene.anchors.first(where: { $0.children.contains { $0 is ModelEntity } }) {
+            arView.scene.removeAnchor(existingAnchor)
+        }
+
+        // Load and add new video
+        if let url = Bundle.main.url(forResource: "sampleVideo", withExtension: "mp4") {
+            let player = AVPlayer(url: url)
+            let videoMaterial = VideoMaterial(avPlayer: player)
+            let modelEntity = ModelEntity(mesh: .generateBox(width: 1.0, height: 0.75, depth: 0.01), materials: [videoMaterial])
+
+            // Set position and orientation of the new video
+            modelEntity.position.x = -1.7
+            modelEntity.position.y = 2.2
+            modelEntity.position.z -= 1.7
+            let radians = 30 * Float.pi / 180 // Converting degrees to radians
+            modelEntity.orientation = simd_quatf(angle: radians, axis: [0, 1, 0])
+
+            // Add the video model entity to the scene
+            let videoAnchor = AnchorEntity()
+            videoAnchor.addChild(modelEntity)
+            arView.scene.addAnchor(videoAnchor)
+
+            // Play the new video
+            player.play()
+            print("Video changed and started")
+        } else {
+            print("Failed to load new video")
         }
     }
 }
