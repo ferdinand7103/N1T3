@@ -18,6 +18,7 @@ struct ContentView : View {
     @State private var isShowingSceneModel = true
     private let speechService = SpeechRecognizerService()
     
+    
     var body: some View {
         ZStack(alignment: .bottom){
             ARViewContainer(modelName: isShowingSceneModel ? "SceneMyModel" : "LovePose").edgesIgnoringSafeArea(.all)
@@ -133,8 +134,6 @@ struct ARViewContainer: UIViewRepresentable, Equatable {
         ARVariables.arView = ARView(frame: .zero)
         print("Loading model: \(modelName)")
         
-        
-        
         //------------------------LOAD SCENE DULU, BARU VIDEO DISEBELAH---------------------------//
         let entityModel = (try? Entity.load(named: modelName))!
         
@@ -150,6 +149,7 @@ struct ARViewContainer: UIViewRepresentable, Equatable {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.addVideo(to: ARVariables.arView)
+            print("Out")
         }
         //------------------------LOAD SCENE DULU, BARU VIDEO DISEBELAH---------------------------//
         
@@ -177,19 +177,24 @@ struct ARViewContainer: UIViewRepresentable, Equatable {
     
     
     func addVideo(to arView: ARView) {
-        if let url = Bundle.main.url(forResource: "intro", withExtension: "mp4") {
+        if let url = Bundle.main.url(forResource: "test", withExtension: "mp4") {
             let player = AVPlayer(url: url)
             let material = VideoMaterial(avPlayer: player)
             let modelEntity = ModelEntity(mesh: .generateBox(width: 1.0, height: 0.75, depth: 0.01), materials: [material])
             
             player.play()
             
-            modelEntity.position.z -= 4 // Adjust position as needed
+            modelEntity.position.x = -1.7
+            modelEntity.position.y = 2.2
+            modelEntity.position.z -= 1.7
+            let radians = 30 * Float.pi / 180 // Converting degrees to radians
+            modelEntity.orientation = simd_quatf(angle: radians, axis: [0, 1, 0])
             
             // Add the video model entity to the scene
             let videoAnchor = AnchorEntity()
             videoAnchor.addChild(modelEntity)
             ARVariables.arView.scene.addAnchor(videoAnchor)
+            print("Play")
         }
     }
 }
