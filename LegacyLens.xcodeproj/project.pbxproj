@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		292DD9922BDF4D0800B9EB81 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */; };
-		292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */; };
 		292DD9B02BDF80A900B9EB81 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */; };
 		292DD9B82BDFAEB400B9EB81 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 292DD9B72BDFAEB400B9EB81 /* test.mp4 */; };
 		295EC3672BE0985D0041F6E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EC3662BE0985D0041F6E4 /* ContentView.swift */; };
@@ -19,13 +18,13 @@
 		29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */; };
 		29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */; };
 		29DB42DC2BDAB63E00ED2F54 /* SpeechRecog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */; };
+		44B0BBCB2BE2A86C002FF400 /* SceneMyModel.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 44B0BBCA2BE2A86C002FF400 /* SceneMyModel.usdz */; };
 		72F9410E1E4759977BF32FA8 /* Pods_LegacyLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D358950DE33D6287553A11F /* Pods_LegacyLens.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A7D6169572CF135E7E880D4 /* Pods-LegacyLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegacyLens.release.xcconfig"; path = "Target Support Files/Pods-LegacyLens/Pods-LegacyLens.release.xcconfig"; sourceTree = "<group>"; };
 		292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
-		292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = SceneMyModel.usdz; path = ../../../../Downloads/SceneMyModel.usdz; sourceTree = "<group>"; };
 		292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
 		292DD9B72BDFAEB400B9EB81 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		295EC3662BE0985D0041F6E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		29DB42B42BDA16BC00ED2F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		29DB42DB2BDAB63E00ED2F54 /* SpeechRecog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecog.swift; sourceTree = "<group>"; };
 		29DB42DF2BDB484400ED2F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		44B0BBCA2BE2A86C002FF400 /* SceneMyModel.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SceneMyModel.usdz; sourceTree = "<group>"; };
 		5D358950DE33D6287553A11F /* Pods_LegacyLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegacyLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3940441D45769E025D7596 /* Pods-LegacyLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegacyLens.debug.xcconfig"; path = "Target Support Files/Pods-LegacyLens/Pods-LegacyLens.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +83,7 @@
 		29DB42AC2BDA16BB00ED2F54 /* LegacyLens */ = {
 			isa = PBXGroup;
 			children = (
+				44B0BBCA2BE2A86C002FF400 /* SceneMyModel.usdz */,
 				29DB42DF2BDB484400ED2F54 /* Info.plist */,
 				29DB42AD2BDA16BB00ED2F54 /* AppDelegate.swift */,
 				29DB42AF2BDA16BB00ED2F54 /* ContentViews.swift */,
@@ -93,7 +94,6 @@
 				292DD9912BDF4D0800B9EB81 /* ARViewContainer.swift */,
 				292DD9B72BDFAEB400B9EB81 /* test.mp4 */,
 				292DD9AF2BDF80A900B9EB81 /* sampleVideo.mp4 */,
-				292DD9942BDF54C400B9EB81 /* SceneMyModel.usdz */,
 				29DB42B12BDA16BC00ED2F54 /* Assets.xcassets */,
 				29DB42B32BDA16BC00ED2F54 /* Preview Content */,
 			);
@@ -180,9 +180,9 @@
 				295EC36D2BE0A1EE0041F6E4 /* LovePose.usdz in Resources */,
 				295EC36F2BE0A2120041F6E4 /* intro.MP4 in Resources */,
 				29DB42B52BDA16BC00ED2F54 /* Preview Assets.xcassets in Resources */,
-				292DD9952BDF54C400B9EB81 /* SceneMyModel.usdz in Resources */,
 				29DB42B22BDA16BC00ED2F54 /* Assets.xcassets in Resources */,
 				292DD9B02BDF80A900B9EB81 /* sampleVideo.mp4 in Resources */,
+				44B0BBCB2BE2A86C002FF400 /* SceneMyModel.usdz in Resources */,
 				292DD9B82BDFAEB400B9EB81 /* test.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LegacyLens/Preview Content\"";
-				DEVELOPMENT_TEAM = M793N4X6S7;
+				DEVELOPMENT_TEAM = C89FEC543S;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -396,7 +396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teamthree.LegacyLens;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamthree.LegacyLenss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -413,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LegacyLens/Preview Content\"";
-				DEVELOPMENT_TEAM = M793N4X6S7;
+				DEVELOPMENT_TEAM = C89FEC543S;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -434,7 +434,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teamthree.LegacyLens;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamthree.LegacyLenss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
